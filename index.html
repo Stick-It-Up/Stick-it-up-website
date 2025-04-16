@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stick It Up - Sticker Shop</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/Logo.svg" alt="Stick It Up Logo" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#catalogue">Catalogue</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Welcome to <span class="--primary-color">Stick It Up</span></h1>
+                    <p class="lead mb-4">Discover our collection of unique stickers for every occasion. From anime to Formula 1, find the perfect sticker to express yourself.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#catalogue" class="btn btn-primary btn-lg">Browse Stickers</a>
+                        <a href="#contact" class="btn btn-outline-primary btn-lg">Contact Us</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image-container">
+                        <img src="assets/Logo.svg" alt="Stick It Up" class="img-fluid hero-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalogue Section -->
+    <section id="catalogue" class="catalogue-section py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Our Sticker Collection</h2>
+                <p class="lead text-muted">Browse through our diverse collection of high-quality stickers</p>
+            </div>
+            
+            <!-- Sticker Grid with Sidebars -->
+            <div class="sticker-grid-container">
+                <!-- Category Sidebar -->
+                <div class="sticker-sidebar category-sidebar">
+                    <h3>Product Categories</h3>
+                    <div class="category-list">
+                        <button type="button" class="btn btn-category active" data-category="all">
+                            <i class="fas fa-th-large"></i>
+                            <span>All Products</span>
+                        </button>
+                        <button type="button" class="btn btn-category" data-category="formula1">
+                            <i class="fas fa-flag-checkered"></i>
+                            <span>Formula 1</span>
+                        </button>
+                        
+                        <!-- Anime Category with Subcategories -->
+                        <div class="category-group">
+                            <button type="button" class="btn btn-category" data-category="anime">
+                                <i class="fas fa-dragon"></i>
+                                <span>Anime</span>
+                                <i class="fas fa-chevron-down category-arrow"></i>
+                            </button>
+                            <div class="subcategories anime-subcategories">
+                                <div class="subcategory-list">
+                                    <button type="button" class="btn btn-subcategory active" data-subcategory="all-anime">
+                                        <i class="fas fa-th-large"></i>
+                                        <span>All Anime</span>
+                                    </button>
+                                    <button type="button" class="btn btn-subcategory" data-subcategory="one-piece">
+                                        <i class="fas fa-ship"></i>
+                                        <span>One Piece</span>
+                                    </button>
+                                    <button type="button" class="btn btn-subcategory" data-subcategory="jjk">
+                                        <i class="fas fa-ghost"></i>
+                                        <span>Jujutsu Kaisen</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-category" data-category="arcane">
+                            <i class="fas fa-magic"></i>
+                            <span>Arcane</span>
+                        </button>
+                        <button type="button" class="btn btn-category" data-category="stitch">
+                            <i class="fas fa-paw"></i>
+                            <span>Stitch</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Main Content Area -->
+                <div class="sticker-main-content">
+                    <!-- Sticker Grid -->
+                    <div class="sticker-grid">
+                        <div class="row g-4" id="sticker-grid">
+                            <!-- Stickers will be loaded here dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Get in Touch</h2>
+                <p class="lead text-muted">Have questions? We'd love to hear from you!</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="contact-card">
+                        <form id="contact-form">
+                            <div class="mb-4">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="4" placeholder="Your message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg w-100">
+                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="assets/Logo.svg" alt="Stick It Up Logo" height="40" class="mb-3">
+                    <p class="mb-0">Bringing your favorite characters and moments to life through high-quality stickers.</p>
+                </div>
+                <div class="col-md-6 text-md-end mt-4 mt-md-0">
+                    <div class="social-links mb-3">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <p class="mb-0">&copy; 2024 Stick It Up. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html> 
